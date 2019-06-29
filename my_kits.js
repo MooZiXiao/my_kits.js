@@ -16,3 +16,5 @@ function getQuery(cn){
 function getQuery(qs){
     return typeof(qs) ? document.querySelector(qs) : qs;
 }
+
+//测试
