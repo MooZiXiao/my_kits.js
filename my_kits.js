@@ -51,5 +51,34 @@ kits.primaryKey = function() {
 
     return now + '' + ran;
 }
+
+/**
+ * 
+ * @description 读取存储在localStorage里的数据
+ * @param {string} key 存储数据使用的键
+ * @return {Array} 返回一个数组，若不存在，则返回空数组
+ * 
+ */
+kits.loadData = function(key){
+    let str = localStorage.getItem(key);
+    let arr =JSON.parse(str);
+    if(!arr){
+        arr = [];
+    }
+    return arr;
+}
+
+/**
+ * 
+ * @description 用于将数组存储到localStorage里的方法
+ * @param {string} key 存储使用的键
+ * @param {Array} arr 要存储的数组数据
+ * @return {undefined}
+ * 
+ */
+function saveData(key,arr){
+    var json = JSON.stringify(arr);
+    localStorage.setItem(key, json);
+  }
 //测试
 //再测试
