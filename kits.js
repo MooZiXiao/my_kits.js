@@ -193,5 +193,28 @@ regFun.prototype.start = function () {
     }
 }
 
+/**
+ * 阻止浏览器回退
+ */
+function forbiddenBack(){
+    history.pushState(null, null, document.URL);
+    window.addEventListener('popstate', function () {
+        history.pushState(null, null, document.URL);
+    })
+}
+
+/**
+ * @description 创建一个范围内数组内所有数相加的函数
+ * @param {object} arr 
+ * @return {number} 返回一个数组内所有数的和
+ *  
+ */
+function sumArrAll(arr){
+    let sum = 0;
+    for(let i = Math.min(...arr); i < Math.max(...arr); i++){
+        sum += i;
+    }
+    return sum;
+}
 //测试
 //再测试
